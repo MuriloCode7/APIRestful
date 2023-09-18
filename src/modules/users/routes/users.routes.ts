@@ -1,10 +1,10 @@
-import { Router } from "express";
-import UsersController from "../controllers/UsersController";
-import {celebrate, Joi, Segments} from 'celebrate';
-import isAuthenticated from "@shared/http/middlewares/isAuthenticated";
-import multer from "multer";
-import uploadConfig from "@config/upload";
-import UserAvatarController from "../controllers/UserAvatarController";
+import { Router } from 'express';
+import UsersController from '../controllers/UsersController';
+import { celebrate, Joi, Segments } from 'celebrate';
+import isAuthenticated from '@shared/http/middlewares/isAuthenticated';
+import multer from 'multer';
+import uploadConfig from '@config/upload';
+import UserAvatarController from '../controllers/UserAvatarController';
 
 const usersRouter = Router();
 const usersController = new UsersController();
@@ -29,25 +29,27 @@ usersRouter.post(
       password: Joi.string().required(),
     },
   }),
-  usersController.create);
+  usersController.create,
+);
 
-  // Rota delete user
-  usersRouter.delete(
+// Rota delete user
+usersRouter.delete(
   '/:id',
   celebrate({
-    [Segments.PARAMS]:{
+    [Segments.PARAMS]: {
       id: Joi.string().uuid().required(),
     },
   }),
-  usersController.delete);
+  usersController.delete,
+);
 
-  // Rota upload avatar
-  usersRouter.patch(
-    '/avatar',
-    isAuthenticated,
-    // Para fazer upload de um unico arquivo, usamos o "upload.array"
-    upload.single('avatar'),
-    usersAvatarController.update,
-  );
+// Rota upload avatar
+usersRouter.patch(
+  '/avatar',
+  isAuthenticated,
+  // Para fazer upload de um unico arquivo, usamos o "upload.array"
+  upload.single('avatar'),
+  usersAvatarController.update,
+);
 
-  export default usersRouter;
+export default usersRouter;

@@ -1,10 +1,10 @@
-import AppError from "@shared/errors/AppError";
-import { getCustomRepository } from "typeorm";
-import UsersRepository from "../typeorm/repositories/UsersRepository";
-import User from "../typeorm/entities/User";
-import path from "path";
-import uploadConfig from "@config/upload";
-import fs from "fs";
+import AppError from '@shared/errors/AppError';
+import { getCustomRepository } from 'typeorm';
+import UsersRepository from '../typeorm/repositories/UsersRepository';
+import User from '../typeorm/entities/User';
+import path from 'path';
+import uploadConfig from '@config/upload';
+import fs from 'fs';
 
 interface IRequest {
   user_id: string;
@@ -12,7 +12,7 @@ interface IRequest {
 }
 
 class UpdateUserAvatarService {
-  public async execute({ user_id, avatarFilename }: IRequest): Promise<User>{
+  public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository);
 
     const user = await usersRepository.findById(user_id);

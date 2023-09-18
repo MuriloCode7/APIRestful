@@ -1,4 +1,4 @@
-import handlebars, { template } from 'handlebars';
+import handlebars from 'handlebars';
 import fs from 'fs';
 /*
 fs e a biblioteca do Node que gerencia arquivos "File System"

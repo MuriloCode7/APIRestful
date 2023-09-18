@@ -1,10 +1,10 @@
-import AppError from "@shared/errors/AppError";
-import { getCustomRepository } from "typeorm";
-import Product from "../typeorm/entities/Product";
-import { ProductRepository } from "../typeorm/repositories/ProductsRepository";
+import AppError from '@shared/errors/AppError';
+import { getCustomRepository } from 'typeorm';
+import Product from '../typeorm/entities/Product';
+import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
 
 class ListProductsService {
-  public async execute(): Promise<Product[]>{
+  public async execute(): Promise<Product[]> {
     const productsRepository = getCustomRepository(ProductRepository);
 
     const products = await productsRepository.find();

@@ -4,10 +4,10 @@
 declare namespace Express {
   export interface Request {
     user: {
-      id: string
-    },
+      id: string;
+    };
     file: {
-      filename: string
-    },
+      filename: string;
+    };
   }
 }

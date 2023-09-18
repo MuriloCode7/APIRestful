@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
-import {errors} from 'celebrate';
+import { errors } from 'celebrate';
 import routes from './routes';
 import AppError from '../errors/AppError';
 import '@shared/typeorm';
@@ -20,33 +20,26 @@ app.use(routes);
 app.use(errors());
 
 app.use(
-  (
-    error: Error,
-    request: Request,
-    response: Response,
-    next: NextFunction
-    ) => {
-      /*
+  (error: Error, request: Request, response: Response, next: NextFunction) => {
+    /*
       Se o erro for uma instancia da classe AppError, ou seja,
       tiver statusCode e message foi um erro da aplicacao,
       senao foi do servidor
       */
-      if (error instanceof AppError){
-        return response.status(error.statusCode).json({
-          status: 'error',
-          message: error.message,
-        });
-      }
-
-      return response.status(500).json({
+    if (error instanceof AppError) {
+      return response.status(error.statusCode).json({
         status: 'error',
-        message: 'Internal server error',
-      })
-    },
+        message: error.message,
+      });
+    }
+
+    return response.status(500).json({
+      status: 'error',
+      message: 'Internal server error',
+    });
+  },
 );
 
 app.listen(3333, () => {
   console.log('Server started on port 3333!');
 });
-
-

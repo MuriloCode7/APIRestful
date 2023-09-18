@@ -1,8 +1,8 @@
-import { Router } from "express";
-import {celebrate, Joi, Segments} from 'celebrate';
-import ForgotPasswordController from "../controllers/ForgotPasswordController";
-import { string } from "joi";
-import ResetPasswordController from "../controllers/ResetPasswordController";
+import { Router } from 'express';
+import { celebrate, Joi, Segments } from 'celebrate';
+import ForgotPasswordController from '../controllers/ForgotPasswordController';
+import { string } from 'joi';
+import ResetPasswordController from '../controllers/ResetPasswordController';
 
 const passwordRouter = Router();
 const forgotPasswordController = new ForgotPasswordController();
@@ -15,9 +15,10 @@ passwordRouter.post(
       email: Joi.string().required(),
     },
   }),
-  forgotPasswordController.create);
+  forgotPasswordController.create,
+);
 
-  passwordRouter.post(
+passwordRouter.post(
   '/reset',
   celebrate({
     [Segments.BODY]: {
@@ -28,6 +29,7 @@ passwordRouter.post(
       password_confirmation: Joi.string().required().valid(Joi.ref('password')),
     },
   }),
-  resetPasswordController.create);
+  resetPasswordController.create,
+);
 
-  export default passwordRouter;
+export default passwordRouter;

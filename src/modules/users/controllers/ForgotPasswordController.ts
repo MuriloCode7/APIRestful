@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
-import ListUsersService from "../services/ListUserService";
-import CreateUserService from "../services/CreateUserService";
-import DeleteUserService from "../services/DeleteUserService";
-import SendForgotPasswordEmailService from "../services/SendForgotPasswordEmailService";
+import { Request, Response } from 'express';
+import ListUsersService from '../services/ListUserService';
+import CreateUserService from '../services/CreateUserService';
+import DeleteUserService from '../services/DeleteUserService';
+import SendForgotPasswordEmailService from '../services/SendForgotPasswordEmailService';
 
 export default class ForgotPasswordController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const {email} = request.body;
+    const { email } = request.body;
 
     const sendForgotPasswordEmail = new SendForgotPasswordEmailService();
 

@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
-import ListUsersService from "../services/ListUserService";
-import CreateUserService from "../services/CreateUserService";
-import DeleteUserService from "../services/DeleteUserService";
+import { Request, Response } from 'express';
+import ListUsersService from '../services/ListUserService';
+import CreateUserService from '../services/CreateUserService';
+import DeleteUserService from '../services/DeleteUserService';
 
 export default class UsersController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -13,7 +13,7 @@ export default class UsersController {
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
-    const {name, email, password} = request.body;
+    const { name, email, password } = request.body;
 
     const createUser = new CreateUserService();
 
@@ -26,14 +26,13 @@ export default class UsersController {
     return response.json(user);
   }
 
-  public async delete(request: Request, response: Response): Promise<Response>{
-    const {id} = request.params;
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { id } = request.params;
 
     const deleteUser = new DeleteUserService();
 
-    await deleteUser.execute({id});
+    await deleteUser.execute({ id });
 
     return response.json([]);
   }
-
 }

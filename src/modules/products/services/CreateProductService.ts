@@ -1,7 +1,7 @@
-import AppError from "@shared/errors/AppError";
-import { getCustomRepository } from "typeorm";
-import Product from "../typeorm/entities/Product";
-import { ProductRepository } from "../typeorm/repositories/ProductsRepository";
+import AppError from '@shared/errors/AppError';
+import { getCustomRepository } from 'typeorm';
+import Product from '../typeorm/entities/Product';
+import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
 
 // Uma interface é a mesma coisa que um objeto
 interface IRequest {
@@ -13,7 +13,7 @@ interface IRequest {
 class CreateProductService {
   // O servico tentara criar um produto a partir dos atributos da interface
   // A promessa que esse metodo assincrono tem é retornar um produto
-  public async execute({name, price, quantity}: IRequest): Promise<Product>{
+  public async execute({ name, price, quantity }: IRequest): Promise<Product> {
     const productsRepository = getCustomRepository(ProductRepository);
 
     // Antes de acrescentar esse cliente, o servico procura no BD algum produto

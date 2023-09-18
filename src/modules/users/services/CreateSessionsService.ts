@@ -1,10 +1,10 @@
-import AppError from "@shared/errors/AppError";
-import { getCustomRepository } from "typeorm";
-import UsersRepository from "../typeorm/repositories/UsersRepository";
-import User from "../typeorm/entities/User";
+import AppError from '@shared/errors/AppError';
+import { getCustomRepository } from 'typeorm';
+import UsersRepository from '../typeorm/repositories/UsersRepository';
+import User from '../typeorm/entities/User';
 import { compare, hash } from 'bcryptjs';
-import { sign } from "jsonwebtoken";
-import authConfig from "@config/auth";
+import { sign } from 'jsonwebtoken';
+import authConfig from '@config/auth';
 
 interface IRequest {
   email: string;
@@ -12,14 +12,14 @@ interface IRequest {
 }
 
 interface IResponse {
-  user: User,
-  token: string,
+  user: User;
+  token: string;
 }
 
 // Nesse servico e feito o login
 
 export default class CreateSessionsService {
-  public async execute({email, password}: IRequest): Promise<IResponse>{
+  public async execute({ email, password }: IRequest): Promise<IResponse> {
     const usersRepository = getCustomRepository(UsersRepository);
     const user = await usersRepository.findByEmail(email);
 

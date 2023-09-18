@@ -4,7 +4,7 @@ import {
   Entity,
   Generated,
   PrimaryGeneratedColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity('users_tokens')
@@ -24,7 +24,6 @@ class UserToken {
 
   @UpdateDateColumn()
   updated_at: Date;
-
 }
 
 export default UserToken;

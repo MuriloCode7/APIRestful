@@ -3,7 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity('users')
@@ -28,7 +28,6 @@ class User {
 
   @UpdateDateColumn()
   updated_at: Date;
-
 }
 
 export default User;
