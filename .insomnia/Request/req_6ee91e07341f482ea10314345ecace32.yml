@@ -1,0 +1,32 @@
+_id: req_6ee91e07341f482ea10314345ecace32
+type: Request
+parentId: fld_1364d415e77544cea218e06f357df357
+modified: 1693851770680
+created: 1693851367748
+url: "{{ _.base_url }}/password/reset"
+name: Reset
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"token": "d2532c04-88e0-4454-a142-9d9130f226f9",
+    	"password": "654321",
+    	"password_confirmation": "654321"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1693851367748
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

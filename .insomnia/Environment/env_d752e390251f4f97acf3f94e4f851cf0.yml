@@ -1,0 +1,16 @@
+_id: env_d752e390251f4f97acf3f94e4f851cf0
+type: Environment
+parentId: env_6a8f2fc6b3d4450ebb2d0d310d92e9c4
+modified: 1695149557295
+created: 1692724423168
+name: Dev
+data:
+  base_url: http://localhost:3333
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTUxNDk1MzQsImV4cCI6MTY5NTIzNTkzNCwic3ViIjoiOTNmNTc3NjUtMWM1OC00NjUyLWEzNjUtOGQ3MGEwYWYxNDIwIn0.Y94tsoRHNxjJ170YfmLbpdroxMyDYLZ9-JKLU3t15Ew
+dataPropertyOrder:
+  "&":
+    - base_url
+    - token
+color: null
+isPrivate: false
+metaSortKey: 1692724423168

@@ -1,0 +1,31 @@
+_id: req_cd4ba773cd37494da41ed875347af48e
+type: Request
+parentId: fld_fb26b5d64d694ab38593583e7bb65a65
+modified: 1695149533406
+created: 1692970359691
+url: "{{ _.base_url }}/sessions"
+name: Criar
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "murilomagalhaes60@gmail.com",
+    	"password": "654321"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: Insomnia/2023.5.6
+authentication: {}
+metaSortKey: -1692970359691
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
