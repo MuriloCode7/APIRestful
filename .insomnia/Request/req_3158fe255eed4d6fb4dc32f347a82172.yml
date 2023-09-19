@@ -1,0 +1,32 @@
+_id: req_3158fe255eed4d6fb4dc32f347a82172
+type: Request
+parentId: fld_71d151eb75e84046a874e3cf72da21b3
+modified: 1693230896553
+created: 1692725047648
+url: "{{ _.base_url }}/products"
+name: Criar
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "book 1",
+    	"price": 50,
+    	"quantity": 10
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: Insomnia/2023.5.5
+authentication: {}
+metaSortKey: -1692725047648
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

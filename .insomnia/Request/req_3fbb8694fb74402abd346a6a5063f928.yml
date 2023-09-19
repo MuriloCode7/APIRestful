@@ -1,0 +1,35 @@
+_id: req_3fbb8694fb74402abd346a6a5063f928
+type: Request
+parentId: fld_46cc4ebce2d4404597051ae3ede1aa1c
+modified: 1693325572441
+created: 1693324997400
+url: "{{ _.base_url }}/users/avatar"
+name: Avatar
+description: ""
+method: PATCH
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_089bbd51114b45c88141f4972c4bfc7a
+      name: avatar
+      value: ""
+      description: ""
+      type: file
+      fileName: /Users/macmini/Downloads/logoWG.jpeg
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+  - name: User-Agent
+    value: Insomnia/2023.5.6
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1693324997401
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

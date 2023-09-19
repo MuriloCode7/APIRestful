@@ -1,0 +1,36 @@
+_id: req_4d890fd14e0c46dca230103a4479bef4
+type: Request
+parentId: fld_c3912e765b514f4a9abc97e2c208b473
+modified: 1695149635635
+created: 1695148375075
+url: "{{ _.base_url }}/profile"
+name: Atualizar
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Murilo",
+    	"email": "murilomagalhaes60@gmail.com",
+    	"password": "234234",
+    	"password_confirmation": "234234",
+    	"old_password": "654321"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1695148375075
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,30 @@
+_id: req_2f6ca328f41c44afba6dacdef782c506
+type: Request
+parentId: fld_cbdf9f88e0654399848c9fb800f6c67a
+modified: 1695062635616
+created: 1693835787148
+url: "{{ _.base_url }}/password/forgot"
+name: Forgot
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"email": "murilosilvamagal@gmail.com"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1693835787148
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
