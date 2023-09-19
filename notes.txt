@@ -1,2 +1,14 @@
 -> O método compare() do bcripts compara uma senha digitada em string com uma senha já
 criptografada, e retorna true se forem iguais
+
+-> Manipulação de obrigatoriedade de dados com Joi e Celebrate:
+ex:
+password: Joi.string().optional(),
+      password_confirmation: Joi.string()
+      // valida se a nova senha e a confirmacao sao iguais
+        .valid(Joi.ref('password'))
+        // Se a nova senha tiver sido informada, a confirmacao sera exigida
+        .when('password', {
+          is: Joi.exist(),
+          then: Joi.required(),
+        }),

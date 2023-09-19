@@ -10,7 +10,7 @@ const usersRouter = Router();
 const usersController = new UsersController();
 const usersAvatarController = new UserAvatarController();
 
-// Aqui instanci
+// Aqui instancia
 const upload = multer(uploadConfig);
 
 // Rota list users
