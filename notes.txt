@@ -1,0 +1,2 @@
+-> O método compare() do bcripts compara uma senha digitada em string com uma senha já
+criptografada, e retorna true se forem iguais
