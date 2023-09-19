@@ -1,0 +1,32 @@
+_id: req_78ecc9d3bed04bd6b9ae80b2a8c2df49
+type: Request
+parentId: fld_71d151eb75e84046a874e3cf72da21b3
+modified: 1692807936519
+created: 1692729122753
+url: "{{ _.base_url }}/products/de2e3729-51e8-4095-be08-ee9b784007bf"
+name: Atualizar
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Book 1",
+    	"price": 200,
+    	"quantity": 50
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: Insomnia/2023.5.5
+authentication: {}
+metaSortKey: -1692729122753
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
