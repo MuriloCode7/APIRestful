@@ -1,0 +1,25 @@
+_id: req_6eff8a2cac404c7db2e79f4b42d92c34
+type: Request
+parentId: fld_5eb8f0e80bf042418c1725729bd5aa4d
+modified: 1695235669869
+created: 1695223689753
+url: "{{ _.base_url }}/customers/cec6e0f5-5f4f-4714-bcdc-e4172c52d266"
+name: Excluir
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1695223689753
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

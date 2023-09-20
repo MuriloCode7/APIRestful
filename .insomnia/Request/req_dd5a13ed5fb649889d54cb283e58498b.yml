@@ -1,0 +1,33 @@
+_id: req_dd5a13ed5fb649889d54cb283e58498b
+type: Request
+parentId: fld_5eb8f0e80bf042418c1725729bd5aa4d
+modified: 1695232939337
+created: 1695223734275
+url: "{{ _.base_url }}/customers/5e2c8ecc-7508-49d7-8d2f-b7e8326fcd07"
+name: Atualizar
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Fernando",
+    	"email": "email@gmail.com"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1695223734275
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
