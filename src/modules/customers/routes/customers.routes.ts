@@ -15,7 +15,7 @@ customersRouter.post(
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
-      email: Joi.string().required(),
+      email: Joi.string().email().required(),
     },
   }),
   customersController.create,
@@ -49,12 +49,12 @@ customersRouter.delete(
 customersRouter.put(
   '/:id',
   celebrate({
-    [Segments.PARAMS]: {
-      id: Joi.string().uuid().required(),
-    },
     [Segments.BODY]: {
       name: Joi.string().required(),
-      email: Joi.string().required(),
+      email: Joi.string().email().required(),
+    },
+    [Segments.PARAMS]: {
+      id: Joi.string().uuid().required(),
     },
   }),
   customersController.update,

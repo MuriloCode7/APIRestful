@@ -1,11 +1,11 @@
-import { getCustomRepository } from 'typeorm';
 import AppError from '@shared/errors/AppError';
-import CustomersRepository from '../typeorm/repositories/CustomersRepository';
+import { getCustomRepository } from 'typeorm';
 import Customer from '../typeorm/entities/Customer';
+import { CustomerRepository } from '../typeorm/repositories/CustomersRepository';
 
 class ListCustomersService {
   public async execute(): Promise<Customer[]> {
-    const customersRepository = getCustomRepository(CustomersRepository);
+    const customersRepository = getCustomRepository(CustomerRepository);
 
     const customers = await customersRepository.find();
 
