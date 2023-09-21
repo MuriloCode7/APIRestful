@@ -6,7 +6,7 @@ import ListCustomersService from '../services/ListCustomersService';
 import UpdateCustomerService from '../services/UpdateCustomerService';
 
 export default class CustomersController {
-  public async index(response: Response): Promise<Response> {
+  public async index(request: Request, response: Response): Promise<Response> {
     const listCustomers = new ListCustomersService();
 
     const customers = await listCustomers.execute();
