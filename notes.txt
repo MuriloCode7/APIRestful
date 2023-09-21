@@ -12,3 +12,6 @@ password: Joi.string().optional(),
           is: Joi.exist(),
           then: Joi.required(),
         }),
+
+-> As definições de atributos que começam com @ nas entidades
+são chamadas de Decorators
