@@ -1,0 +1,25 @@
+_id: req_576e9da937154538bd79bdd842c52f13
+type: Request
+parentId: fld_5eb8f0e80bf042418c1725729bd5aa4d
+modified: 1695235715340
+created: 1695223513592
+url: "{{ _.base_url }}/customers/6a47e547-7d85-43f7-8a3a-561e2bed863c"
+name: Exibir
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1695223513592
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

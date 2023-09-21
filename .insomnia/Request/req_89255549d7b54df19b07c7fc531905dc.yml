@@ -1,0 +1,33 @@
+_id: req_89255549d7b54df19b07c7fc531905dc
+type: Request
+parentId: fld_5eb8f0e80bf042418c1725729bd5aa4d
+modified: 1695235695824
+created: 1695219977203
+url: "{{ _.base_url }}/customers"
+name: Criar
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Murilo",
+    	"email": "emailmurilocliente@gmail.com"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: insomnia/2023.5.8
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1695219977203
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
