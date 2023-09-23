@@ -1,7 +1,6 @@
 import Customer from '@modules/customers/typeorm/entities/Customer';
 import OrdersProducts from './OrdersProducts';
 import {
-  Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
@@ -23,7 +22,7 @@ class Order {
   @JoinColumn({ name: 'customer_id' })
   customer: Customer;
 
-  @OneToMany(() => OrdersProducts, orders_products => orders_products.order, {
+  @OneToMany(() => OrdersProducts, order_products => order_products.order, {
     cascade: true,
   })
   order_products: OrdersProducts[];

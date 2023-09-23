@@ -15,15 +15,13 @@ interface IRequest {
 
 @EntityRepository(Order)
 export class OrdersRepository extends Repository<Order> {
-  /* Essa busca retorna uma promessa, sendo um objeto product ou undefined
-  Caso a busca nao gere resultado
-  */
   public async findById(id: string): Promise<Order | undefined> {
     // A seguinte constante recebera o id do pedido, os produtos do pedido
     // e os dados do cliente
     const order = this.findOne(id, {
-      relations: ['order_Products', 'customer'],
+      relations: ['order_products', 'customer'],
     });
+
     return order;
   }
 
@@ -34,6 +32,7 @@ export class OrdersRepository extends Repository<Order> {
     });
 
     await this.save(order);
+
     return order;
   }
 }
