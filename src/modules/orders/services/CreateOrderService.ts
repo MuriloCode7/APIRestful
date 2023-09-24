@@ -65,8 +65,7 @@ class CreateOrderService {
 
     if (quantityAvailable.length) {
       throw new AppError(
-        `The quantity ${quantityAvailable[0].quantity}
-        is not available for ${quantityAvailable[0].id}`,
+        `The quantity ${quantityAvailable[0].quantity} is not available for ${quantityAvailable[0].id}`,
       );
     }
 
