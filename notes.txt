@@ -19,3 +19,6 @@ são chamadas de Decorators
 -> Variáveis de ambientes são informações que configuramos em nossa aplicação para que
 tenham valores diferentes dependendo do ambiente em que a aplicação está sendo executação
 As valores das variáveis de ambiente não vão para o Git, apenas os nomes delas
+
+-> A biblioteca Class Transformer permite além de outras coisas alterar a forma como as informações das entidades
+serão exibidas para os usuarios, permitindo até inibir atributos
