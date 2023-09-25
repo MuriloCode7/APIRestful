@@ -22,3 +22,6 @@ As valores das variáveis de ambiente não vão para o Git, apenas os nomes dela
 
 -> A biblioteca Class Transformer permite além de outras coisas alterar a forma como as informações das entidades
 serão exibidas para os usuarios, permitindo até inibir atributos
+
+-> Implementação do Redis para controle do cache. O cache guarda as requisições mais custosas
+e as requisicões mais usadas
