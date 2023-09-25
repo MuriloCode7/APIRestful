@@ -1,5 +1,6 @@
 -> O método compare() do bcripts compara uma senha digitada em string com uma senha já
 criptografada, e retorna true se forem iguais
+_______________________________________________________________________________________________________________
 
 -> Manipulação de obrigatoriedade de dados com Joi e Celebrate:
 ex:
@@ -12,16 +13,34 @@ password: Joi.string().optional(),
           is: Joi.exist(),
           then: Joi.required(),
         }),
+_______________________________________________________________________________________________________________
 
 -> As definições de atributos que começam com @ nas entidades
 são chamadas de Decorators
+_______________________________________________________________________________________________________________
 
 -> Variáveis de ambientes são informações que configuramos em nossa aplicação para que
 tenham valores diferentes dependendo do ambiente em que a aplicação está sendo executação
 As valores das variáveis de ambiente não vão para o Git, apenas os nomes delas
+_______________________________________________________________________________________________________________
 
--> A biblioteca Class Transformer permite além de outras coisas alterar a forma como as informações das entidades
-serão exibidas para os usuarios, permitindo até inibir atributos
+-> A biblioteca Class Transformer permite além de outras coisas alterar a forma
+como as informações das entidades serão exibidas para os usuarios, permitindo até inibir atributos
+_______________________________________________________________________________________________________________
 
 -> Implementação do Redis para controle do cache. O cache guarda as requisições mais custosas
 e as requisicões mais usadas
+_______________________________________________________________________________________________________________
+
+📌 Trabalhando com Redis no terminal:
+- docker start redis -> Executa apenas o container do Redis
+- docker exec -it redis sh -> Executa o redis cliente
+- data # redis-cli
+- set chave valor -> define um novo conjunto de chave e valor
+- get chave -> traz o valor de uma chave
+- del chave1 chave2 ... -> Deleta todas as chaves separadas por espaço
+_______________________________________________________________________________________________________________
+
+-> A biblioteca rate-limiter controla a quantidade de requisicoes que a aplicacao
+pode ter por minuto, dessa forma é possivel proteger a aplicacao contra ataques como
+brute force.
