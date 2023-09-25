@@ -10,9 +10,15 @@ class ListProductsService {
 
     const redisCache = new RedisCache();
 
-    const products = await productsRepository.find();
+    let products = await redisCache.recover<Product[]>(
+      'api-restful-PRODUCT_LIST',
+    );
 
-    await redisCache.save('teste', 'teste');
+    if (!products) {
+      products = await productsRepository.find();
+
+      await redisCache.save('api-restful-PRODUCT_LIST', products);
+    }
 
     // Se nenhum produto for encontrado, aparece uma mensagem
     if ((await products).length == 0) {
