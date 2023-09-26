@@ -44,3 +44,7 @@ ________________________________________________________________________________
 -> A biblioteca rate-limiter controla a quantidade de requisicoes que a aplicacao
 pode ter por minuto, dessa forma é possivel proteger a aplicacao contra ataques como
 brute force.
+_______________________________________________________________________________________________________________
+
+-> Usamos o Amazon S3 com os buckets para poder hospedar as imagens de avatar dos
+usuários
