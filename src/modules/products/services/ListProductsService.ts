@@ -2,12 +2,21 @@ import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import Product from '../typeorm/entities/Product';
 import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
+import redisCache from '@shared/cache/RedisCache';
 
 class ListProductsService {
   public async execute(): Promise<Product[]> {
     const productsRepository = getCustomRepository(ProductRepository);
 
-    const products = await productsRepository.find();
+    let products = await redisCache.recover<Product[]>(
+      'api-restful-PRODUCT_LIST',
+    );
+
+    if (!products) {
+      products = await productsRepository.find();
+
+      await redisCache.save('api-restful-PRODUCT_LIST', products);
+    }
 
     // Se nenhum produto for encontrado, aparece uma mensagem
     if ((await products).length == 0) {
