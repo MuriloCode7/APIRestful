@@ -48,3 +48,13 @@ ________________________________________________________________________________
 
 -> Usamos o Amazon S3 com os buckets para poder hospedar as imagens de avatar dos
 usuários
+_______________________________________________________________________________________________________________
+
+BABEL: O babel é usado pra converter/transpilar código tsc para js mais atualizado de forma que o node interprete
+- Uma vantagem de trabalhar com o Babel no lugar do tsc é o gerenciamento dos paths, que são os caminhos definidos
+com '@'.
+- Instalação:
+yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript
+@babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties
+babel-plugin-module-resolver babel-plugin-transform-typescript-metadata
+

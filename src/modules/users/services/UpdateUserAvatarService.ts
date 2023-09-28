@@ -22,13 +22,16 @@ class UpdateUserAvatarService {
     }
 
     let storageProvider;
+
+    /* A variavel driver do uploadConfig varia de acordo com o ambiente ('s3'
+    para upload remoto na Amazon S3 e 'disk' para local*/
     if (uploadConfig.driver === 's3') {
       storageProvider = new S3StorageProvider();
     } else {
       storageProvider = new DiskStorageProvider();
     }
 
-    // O if passando apenas a variavel no tsc, verifica se ela e falsa ou se esta vazia
+    /* Se o usuario ja tiver um avatar, ele sera deletado */
     if (user.avatar) {
       await storageProvider.deleteFile(user.avatar);
     }
