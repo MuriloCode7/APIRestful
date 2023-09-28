@@ -11,7 +11,7 @@ const usersController = new UsersController();
 const usersAvatarController = new UserAvatarController();
 
 // Aqui instancia
-const upload = multer(uploadConfig);
+const upload = multer(uploadConfig.multer);
 
 // Rota list users
 // Para listar os usuarios, a API esta exigindo o token

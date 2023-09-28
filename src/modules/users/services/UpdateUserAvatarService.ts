@@ -3,6 +3,8 @@ import { getCustomRepository } from 'typeorm';
 import UsersRepository from '../typeorm/repositories/UsersRepository';
 import User from '../typeorm/entities/User';
 import DiskStorageProvider from '@shared/providers/StorageProvider/DiskStorageProvider';
+import S3StorageProvider from '@shared/providers/StorageProvider/S3StorageProvider';
+import uploadConfig from '@config/upload';
 
 interface IRequest {
   user_id: string;
@@ -12,12 +14,18 @@ interface IRequest {
 class UpdateUserAvatarService {
   public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository);
-    const storageProvider = new DiskStorageProvider();
 
     const user = await usersRepository.findById(user_id);
 
     if (!user) {
       throw new AppError('User not found.');
+    }
+
+    let storageProvider;
+    if (uploadConfig.driver === 's3') {
+      storageProvider = new S3StorageProvider();
+    } else {
+      storageProvider = new DiskStorageProvider();
     }
 
     // O if passando apenas a variavel no tsc, verifica se ela e falsa ou se esta vazia
