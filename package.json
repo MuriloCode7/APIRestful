@@ -8,7 +8,8 @@
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files"
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
+    "prod": "node dist/shared/http/server.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
