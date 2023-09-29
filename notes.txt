@@ -1,3 +1,7 @@
+-> Um ORM é uma ferramenta usada para gerenciamento de banco de dados que interpreta os atributos de um objeto
+como colunas de uma tabela no bd.
+_______________________________________________________________________________________________________________
+
 -> O método compare() do bcripts compara uma senha digitada em string com uma senha já
 criptografada, e retorna true se forem iguais
 _______________________________________________________________________________________________________________
@@ -57,4 +61,22 @@ com '@'.
 yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript
 @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties
 babel-plugin-module-resolver babel-plugin-transform-typescript-metadata
+_______________________________________________________________________________________________________________
+                          >>>>>>>>> PADRÕES DE PROJETO E BOAS PRÁTICAS <<<<<<<<<<
+_______________________________________________________________________________________________________________
 
+Domain Driven Design (DDD) - Desenvolvimento Orientado a Domínio
+
+- Não podemos ter nossos serviços e nossas classes de domínio com conhecimento da ORM que estamos usando, para
+em caso de troca, o sistema saiba como lidar com isso
+- Essas ferramentas como o Express, o TypeORM fazem parte da infraestrutura do projeto.
+- As classes e recursos dos nossos módulos não podem ter criação de instãncia de nada relacionado a infraestrutura
+_______________________________________________________________________________________________________________
+SOLID - 5 PRINCÍPIOS
+1: Single-responsability principle: Uma classe deve ter apenas uma única responsabilidade
+2: Open-closed principle: Não podemos alterar classes prontas. A medida em que o software vai crescendo, não podemos
+alterar uma classe que já tem sua responsabilidade para adicionar outra funcionalidade nela. Mas podemos extender ela
+em outra classe para usar o que já temos, ou criar uma nova classe para atender a essa nova funcionalidade.
+3: Liskov substitution principle: O software deve funcionar tanto se for funcionar em uma classe mãe ou em uma classe filha.
+4: Interface Segregation principle: Muitas interfaces especificas é melhor do que apenas uma geral.
+5: Dependency inversions principle: Classes devem depender de abstrações e não de implementações
