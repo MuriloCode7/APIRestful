@@ -1,12 +1,13 @@
 import { EntityRepository, In, Repository } from 'typeorm';
 import Product from '../entities/Product';
+import { IProductsRepository } from '@modules/products/domain/repositories/IProductsRepository';
 
 interface IFindProducts {
   id: string;
 }
 
 @EntityRepository(Product)
-export class ProductRepository extends Repository<Product> {
+export class ProductRepository extends Repository<Product> implements IProductsRepository{
   /* Essa busca retorna uma promessa, sendo um objeto product ou undefined
   Caso a busca nao gere resultado
   */

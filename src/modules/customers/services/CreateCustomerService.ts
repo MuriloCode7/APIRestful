@@ -2,14 +2,10 @@ import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import Customer from '../infra/typeorm/entities/Customer';
 import { CustomerRepository } from '../infra/typeorm/repositories/CustomersRepository';
-
-interface IRequest {
-  name: string;
-  email: string;
-}
+import { ICreateCustomer } from '../domain/models/ICreateCustomer';
 
 class CreateCustomerService {
-  public async execute({ name, email }: IRequest): Promise<Customer> {
+  public async execute({ name, email }: ICreateCustomer): Promise<Customer> {
     const customersRepository = getCustomRepository(CustomerRepository);
     const emailExists = await customersRepository.findByEmail(email);
 

@@ -9,12 +9,13 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { IOrder } from '@modules/orders/domain/models/IOrder';
 
 // As definições de atributos que começam com @ nas entidades
 // são chamadas de Decorators
 
 @Entity('orders')
-class Order {
+class Order implements IOrder {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

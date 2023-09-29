@@ -4,19 +4,15 @@ import Order from '../infra/typeorm/entities/Order';
 import { CustomerRepository } from '@modules/customers/infra/typeorm/repositories/CustomersRepository';
 import { ProductRepository } from '@modules/products/infra/typeorm/repositories/ProductsRepository';
 import { OrdersRepository } from '../infra/typeorm/repositories/OrdersRepository';
+import { ICreateOrder } from '../domain/models/ICreateOrder';
 
 interface IProduct {
   id: string;
   quantity: number;
 }
 
-interface IRequest {
-  customer_id: string;
-  products: IProduct[];
-}
-
 class CreateOrderService {
-  public async execute({ customer_id, products }: IRequest): Promise<Order> {
+  public async execute({ customer_id, products }: ICreateOrder): Promise<Order> {
     const ordersRepository = getCustomRepository(OrdersRepository);
     const customersRepository = getCustomRepository(CustomerRepository);
     const productsRepository = getCustomRepository(ProductRepository);

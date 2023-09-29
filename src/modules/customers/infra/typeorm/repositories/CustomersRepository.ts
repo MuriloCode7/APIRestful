@@ -1,10 +1,19 @@
-import { EntityRepository, Repository } from 'typeorm';
+import { getRepository, Repository } from 'typeorm';
 import Customer from '../entities/Customer';
+import { ICustomersRepository } from '@modules/customers/domain/repositories/ICustomersRepository';
 
-@EntityRepository(Customer)
-export class CustomerRepository extends Repository<Customer> {
+export class CustomerRepository implements ICustomersRepository{
+  /* Para seguir os principios do SOLID, desacoplamos o typeORM do projeto passando-o como atributo
+  da classe de cada repositorio. Dessa forma, é possivel trabalhar com qualquer orm que venha a ser
+  usado pela aplicacao*/
+  private ormRepository: Repository<Customer>;
+
+  constructor(){
+    this.ormRepository = getRepository(Customer);
+  }
+
   public async findByName(name: string): Promise<Customer | undefined> {
-    const customer = await this.findOne({
+    const customer = await this.ormRepository.findOne({
       where: {
         name,
       },
@@ -14,7 +23,7 @@ export class CustomerRepository extends Repository<Customer> {
   }
 
   public async findById(id: string): Promise<Customer | undefined> {
-    const customer = await this.findOne({
+    const customer = await this.ormRepository.findOne({
       where: {
         id,
       },
@@ -24,7 +33,7 @@ export class CustomerRepository extends Repository<Customer> {
   }
 
   public async findByEmail(email: string): Promise<Customer | undefined> {
-    const customer = await this.findOne({
+    const customer = await this.ormRepository.findOne({
       where: {
         email,
       },
