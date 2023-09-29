@@ -1,5 +1,9 @@
 -> Um ORM é uma ferramenta usada para gerenciamento de banco de dados que interpreta os atributos de um objeto
 como colunas de uma tabela no bd.
+
+-> Para seguir os principios do SOLID, desacoplamos o typeORM do projeto passando-o como atributo
+  da classe de cada repositorio. Dessa forma, é possivel trabalhar com qualquer orm que venha a ser
+  usado pela aplicacao
 _______________________________________________________________________________________________________________
 
 -> O método compare() do bcripts compara uma senha digitada em string com uma senha já
@@ -61,6 +65,9 @@ com '@'.
 yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript
 @babel/plugin-proposal-decorators @babel/plugin-proposal-class-properties
 babel-plugin-module-resolver babel-plugin-transform-typescript-metadata
+_______________________________________________________________________________________________________________
+> LOCAIS ONDE A PAGINAÇAO ESTÁ SENDO IMPLENTADA
+- Listagem de clientes
 _______________________________________________________________________________________________________________
                           >>>>>>>>> PADRÕES DE PROJETO E BOAS PRÁTICAS <<<<<<<<<<
 _______________________________________________________________________________________________________________
