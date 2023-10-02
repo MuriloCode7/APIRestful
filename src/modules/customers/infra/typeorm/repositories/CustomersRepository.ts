@@ -1,6 +1,8 @@
 import { getRepository, Repository } from 'typeorm';
 import Customer from '../entities/Customer';
 import { ICustomersRepository } from '@modules/customers/domain/repositories/ICustomersRepository';
+import { ICreateCustomer } from '@modules/customers/domain/models/ICreateCustomer';
+import { ICustomer } from '@modules/customers/domain/models/ICustomer';
 
 export class CustomerRepository implements ICustomersRepository{
   /* Para seguir os principios do SOLID, desacoplamos o typeORM do projeto passando-o como atributo
@@ -12,7 +14,25 @@ export class CustomerRepository implements ICustomersRepository{
     this.ormRepository = getRepository(Customer);
   }
 
+  public async create({name, email}: ICreateCustomer): Promise<Customer> {
+    const customer = this.ormRepository.create({name, email});
+
+    await this.ormRepository.save(customer);
+
+    return customer;
+  }
+
+  public async save(customer: ICreateCustomer): Promise<ICreateCustomer> {
+    await this.ormRepository.save(customer);
+
+    return customer;
+  }
+
+
   public async findByName(name: string): Promise<Customer | undefined> {
+    /* Caso os metodos do orm estiverem acusando erro, verificar se o nome
+    é o que esta no codigo, como "findOne()" por exemplo, é a sintaxe usada
+    no TypeORM, mas em outro ORM pode ser outra */
     const customer = await this.ormRepository.findOne({
       where: {
         name,

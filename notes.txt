@@ -87,3 +87,8 @@ em outra classe para usar o que já temos, ou criar uma nova classe para atender
 3: Liskov substitution principle: O software deve funcionar tanto se for funcionar em uma classe mãe ou em uma classe filha.
 4: Interface Segregation principle: Muitas interfaces especificas é melhor do que apenas uma geral.
 5: Dependency inversions principle: Classes devem depender de abstrações e não de implementações
+_______________________________________________________________________________________________________________
+>>>>>>>>INVERSÃO DE DEPENDENCIA<<<<<<<<
+
+- Ao invés dos serviços ficarem responsáveis por instanciar cada repositório, o controller que devera indicar o repositório que o
+servico vai usar.
