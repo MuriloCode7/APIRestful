@@ -9,7 +9,8 @@
     "lint-fix": "eslint . --ext .ts --fix",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
-    "prod": "node dist/shared/infra/http/server.js"
+    "prod": "node dist/shared/infra/http/server.js",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
@@ -24,6 +25,7 @@
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
     "@types/ioredis": "^5.0.0",
+    "@types/jest": "^29.5.5",
     "@types/joi": "^17.2.3",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/mime": "^3.0.2",
@@ -38,6 +40,8 @@
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.6"
