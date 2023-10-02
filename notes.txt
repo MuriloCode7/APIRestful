@@ -92,3 +92,9 @@ ________________________________________________________________________________
 
 - Ao invés dos serviços ficarem responsáveis por instanciar cada repositório, o controller que devera indicar o repositório que o
 servico vai usar.
+_______________________________________________________________________________________________________________
+>>>>>>>>INJECAO DE DEPENDENCIA<<<<<<<<
+- Para injetar as dependencias como os repositórios nos serviços, usamos os containeres da biblioteca tysringe, onde criamos um
+container passando uma chave e um valor que recebe o repositório em questão.
+- A partir dessa definição, precisamos adicionar o decorator @injectable na classe do serviço e o decorator @inject na instancia do repositorio
+

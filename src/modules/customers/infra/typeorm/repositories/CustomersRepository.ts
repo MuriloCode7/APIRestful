@@ -4,7 +4,7 @@ import { ICustomersRepository } from '@modules/customers/domain/repositories/ICu
 import { ICreateCustomer } from '@modules/customers/domain/models/ICreateCustomer';
 import { ICustomer } from '@modules/customers/domain/models/ICustomer';
 
-export class CustomerRepository implements ICustomersRepository{
+export class CustomersRepository implements ICustomersRepository{
   /* Para seguir os principios do SOLID, desacoplamos o typeORM do projeto passando-o como atributo
   da classe de cada repositorio. Dessa forma, é possivel trabalhar com qualquer orm que venha a ser
   usado pela aplicacao*/
@@ -22,12 +22,15 @@ export class CustomerRepository implements ICustomersRepository{
     return customer;
   }
 
-  public async save(customer: ICreateCustomer): Promise<ICreateCustomer> {
+  public async save(customer: Customer): Promise<Customer> {
     await this.ormRepository.save(customer);
 
     return customer;
   }
 
+  public async remove(customer: ICustomer): Promise<void> {
+    await this.ormRepository.remove(customer);
+  }
 
   public async findByName(name: string): Promise<Customer | undefined> {
     /* Caso os metodos do orm estiverem acusando erro, verificar se o nome

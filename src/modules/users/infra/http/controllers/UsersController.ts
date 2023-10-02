@@ -3,6 +3,7 @@ import ListUsersService from '../../../services/ListUserService';
 import CreateUserService from '../../../services/CreateUserService';
 import DeleteUserService from '../../../services/DeleteUserService';
 import { instanceToInstance } from 'class-transformer';
+import { container } from 'tsyringe';
 
 export default class UsersController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -16,7 +17,7 @@ export default class UsersController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { name, email, password } = request.body;
 
-    const createUser = new CreateUserService();
+    const createUser = container.resolve(CreateUserService);
 
     const user = await createUser.execute({
       name,
