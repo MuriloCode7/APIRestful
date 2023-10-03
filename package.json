@@ -33,6 +33,7 @@
     "@types/node": "^20.4.8",
     "@types/nodemailer": "^6.4.10",
     "@types/redis": "^4.0.11",
+    "@types/uuid": "^9.0.4",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "babel-plugin-module-resolver": "^5.0.0",
@@ -73,6 +74,7 @@
     "touch": "^3.1.0",
     "tsyringe": "^4.8.0",
     "typeorm": "^0.2.38",
-    "typeorm-pagination": "^2.0.3"
+    "typeorm-pagination": "^2.0.3",
+    "uuid": "^9.0.1"
   }
 }

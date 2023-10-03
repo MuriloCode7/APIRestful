@@ -104,4 +104,5 @@ ________________________________________________________________________________
 - JEST: Framework de testes automatizados em JS
 - Para realizar testes automatizados usamos um repositorio fake para termos aonde salvar os objetos criados com
 os testes.
-
+_______________________________________________________________________________________________________________
+* O FakeCustomersRepository traz interessantes formas de manipulação de arrays sem o uso de for

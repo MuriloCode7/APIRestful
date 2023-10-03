@@ -1,39 +1,47 @@
-import Customer from '../entities/Customer';
+import { v4 as uuidv4 } from 'uuid';
+import Customer from '@modules/customers/infra/typeorm/entities/Customer';
 import { ICustomersRepository } from '@modules/customers/domain/repositories/ICustomersRepository';
 import { ICreateCustomer } from '@modules/customers/domain/models/ICreateCustomer';
-import { ICustomer } from '@modules/customers/domain/models/ICustomer';
 
-export class CustomersRepository implements ICustomersRepository{
-  /* Para seguir os principios do SOLID, desacoplamos o typeORM do projeto passando-o como atributo
-  da classe de cada repositorio. Dessa forma, é possivel trabalhar com qualquer orm que venha a ser
-  usado pela aplicacao*/
-  private ormRepository: Repository<Customer>;
+/* O tsc permite  omitir metodos da interface que está sendo implementada, para não ser obrigatorio
+implementa-los */
+//export class FakeCustomersRepository implements Omit<ICustomersRepository, 'remove'>{
+export class FakeCustomersRepository implements ICustomersRepository {
+  private customers: Customer[] = [];
 
-  constructor(){
-    this.ormRepository = getRepository(Customer);
+  public async create({ name, email }: ICreateCustomer): Promise<Customer> {
+    const customer = new Customer();
+
+    customer.id = uuidv4();
+    customer.name = name;
+    customer.email = email;
+
+    this.customers.push(customer);
+
+    return customer;
   }
 
-  public async create({name, email}: ICreateCustomer): Promise<Customer> {
+  public async save(customer: Customer): Promise<Customer> {
+    /* O metodo assign do Object une arrays ou objetos */
+    Object.assign(this.customers, customer);
 
+    return customer;
   }
 
-  // public async save(customer: Customer): Promise<Customer> {
+  public async remove(customer: Customer): Promise<void> {}
 
-  // }
+  public async findByName(name: string): Promise<Customer | undefined> {
+    const customer = this.customers.find(customer => customer.name === name);
+    return customer;
+  }
 
-  // public async remove(customer: ICustomer): Promise<void> {
+  public async findById(id: string): Promise<Customer | undefined> {
+    const customer = this.customers.find(customer => customer.id === id);
+    return customer;
+  }
 
-  // }
-
-  // public async findByName(name: string): Promise<Customer | undefined> {
-
-  // }
-
-  // public async findById(id: string): Promise<Customer | undefined> {
-
-  // }
-
-  // public async findByEmail(email: string): Promise<Customer | undefined> {
-
-  // }
+  public async findByEmail(email: string): Promise<Customer | undefined> {
+    const customer = this.customers.find(customer => customer.email === email);
+    return customer;
+  }
 }
