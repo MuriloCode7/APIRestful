@@ -23,7 +23,15 @@ export class FakeCustomersRepository implements ICustomersRepository {
 
   public async save(customer: Customer): Promise<Customer> {
     /* O metodo assign do Object une arrays ou objetos */
-    Object.assign(this.customers, customer);
+    //Object.assign(this.customers, customer);
+
+    /* Nesta implementacao é buscado o cliente já cadastrado com o id
+    do cliente que está sendo salvo para atualizar o registro/sobrescrever */
+    const findIndex = this.customers.findIndex(
+      findCustomer => findCustomer.id === customer.id,
+    );
+
+    this.customers[findIndex] = customer;
 
     return customer;
   }
