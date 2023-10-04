@@ -1,5 +1,3 @@
-// Para garantir que alteracoes feitas no tsconfig sejam carregadas, interrompa a execucao
-// do servidor e inicie novamente
 {
   "compilerOptions": {
     "target": "es2016",
